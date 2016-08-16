@@ -6,10 +6,12 @@ steps I took to write this app, consider reading the [Tutorial](tutorial/README.
 ## Quick Start
 If you just want to see what this project does:
 ```
+git clone https://github.com/ChristianKreuzberger/django-rest-imageupload-example.git
+cd django-rest-imageupload-example
 virtualenv -p python3.4 venv
 source venv/bin/activate
 pip install -r requirements.txt
-cd django-rest_imageupload_backend
+cd django_rest_imageupload_backend
 python manage.py migrate
 python manage.py runserver
 ```
