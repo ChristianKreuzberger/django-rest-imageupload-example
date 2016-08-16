@@ -2,7 +2,7 @@
 We will start by installing requirements and setting up the project. If you already did that, continue with [Step 2](step2.md).
 
 ## Installing requirements and setting up the virtual environment
-Create a virtual environment ([http://TODO](click here) to learn more about virtual environments) and install requirements
+Create a [virtual environment](http://docs.python-guide.org/en/latest/dev/virtualenvs/) and install requirements
 ```bash
 mkdir django-rest-imageupload-example
 cd django-rest-imageupload-example
@@ -84,7 +84,7 @@ Quit the server with CONTROL-C.
 ```
 
 
-Looks like we have 13 unapplied [http://TODO](migrations)! Let's quickly fix them by running the following command in a shell:
+Looks like we have 13 unapplied [migrations](https://docs.djangoproject.com/en/1.10/topics/migrations/)! Let's quickly fix them by running the following command in a shell:
 ```bash
 python manage.py migrate
 ```
