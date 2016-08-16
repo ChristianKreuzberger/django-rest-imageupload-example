@@ -17,7 +17,7 @@ The directory structure should now look like this:
          * `manage.py`
      * `venv`
 
-Make sure to add `imageupload_rest` as well as `rest_framework` in [django-rest-imageupload-example/django_rest_imageupload_backend/backend_app/settings.py](settings.py):
+Make sure to add `imageupload_rest` as well as `rest_framework` in [backend_app/settings.py](django-rest-imageupload-example/django_rest_imageupload_backend/backend_app/settings.py):
 ```python
 INSTALLED_APPS = [
     ...
@@ -72,7 +72,7 @@ Django Rest Framework  Apps are organized as follows:
  * `serializers.py` (needs to be created) define how certain models should be linked together and serialized 
 
 We will start by creating a serializer for our `UploadedImage` model in 
-[django-rest-imageupload-example/django_rest_imageupload_backend/imageupload_rest/serializers.py](imageupload_rest/serializers.py):
+[imageupload_rest/serializers.py](django-rest-imageupload-example/django_rest_imageupload_backend/imageupload_rest/serializers.py):
 ```python
 from rest_framework import serializers
 from imageupload.models import UploadedImage
@@ -87,7 +87,7 @@ class UploadedImageSerializer(serializers.ModelSerializer):
 This serializer tells the DRF engine to serialize the fields `pk` and `image` of our model `UploadedImage`.
  
 The corresponding viewset is also not very difficult to write 
-[django-rest-imageupload-example/django_rest_imageupload_backend/imageupload_rest/viewsets.py](imageupload_rest/viewsets.py):
+[imageupload_rest/viewsets.py](django-rest-imageupload-example/django_rest_imageupload_backend/imageupload_rest/viewsets.py):
 ```python
 from rest_framework import viewsets, filters
 from imageupload_rest import serializers
@@ -120,7 +120,7 @@ urlpatterns = [
 
 ```
 
-Now refresh the [http://127.0.0.1:8000/api/](browsable API site) in your browser and the new `images` endpoint should
+Now refresh the [browsable API site](http://127.0.0.1:8000/api/) in your browser and the new `images` endpoint should
 appear. By clicking on the link for this new endpoint you should be able to a list of existing images, ready to
 be displayed a (still to be written) frontend application. In addition, the browsable API lets you upload new images
 and delete existing images (e.g., by accessing [http://127.0.0.1:8000/api/images/1/]() in your browser and clicking on delete).

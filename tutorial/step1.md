@@ -1,6 +1,5 @@
 # Step 1: Set up the basic Django project structure
-We will start by installing requirements and setting up the project. If you already did that, continue with
-[step2.md](Step 2).
+We will start by installing requirements and setting up the project. If you already did that, continue with [Step 2](step2.md).
 
 ## Installing requirements and setting up the virtual environment
 Create a virtual environment ([http://TODO](click here) to learn more about virtual environments) and install requirements
@@ -12,9 +11,8 @@ source venv/bin/activate # activate the virtual environment
 pip install django djangorestframework markdown django-filter Pillow # install requirements
 ```
 
-For [http://TODO](Pillow) (a third party library for image uploads in Django) to work properly, you need to install some 
-extra tools (mainly libjpeg and zlib). See 
-[http://pillow.readthedocs.io/en/3.1.x/installation.html#building-on-linux](this site) for details.
+For [Pillow](https://python-pillow.org/) (a third party library for image uploads in Django) to work properly, you need to install some 
+extra tools (mainly libjpeg and zlib). See [this site](http://pillow.readthedocs.io/en/3.1.x/installation.html#building-on-linux) for details.
 
 ## Creating our Django Project
 Create the Django project by executing the following command in a shell:
@@ -23,7 +21,7 @@ django-admin startproject django_rest_imageupload_backend
 ```
 
 Now open the main folder `django-rest-imageupload-example` as a project in an editor of your choice
-(we recommend the [https://www.jetbrains.com/pycharm/download/#section=linux](PyCharm community edition)). 
+(we recommend the [PyCharm community edition](https://www.jetbrains.com/pycharm/download/#section=linux)). 
 You should see the following project structure:
 
  * `django-rest-imageupload-example`
@@ -93,7 +91,7 @@ python manage.py migrate
 
 
 You can try to access [http://127.0.0.1.8000]() in a browser, but you will not be able to see much, except for a message
-telling you that you that _It worked!_. However, Django comes with a handy [http://TODO](admin panel), which you can 
+telling you that you that _It worked!_. However, Django comes with a handy [admin panel](https://docs.djangoproject.com/en/1.10/ref/contrib/admin/), which you can 
 access by going to [http://127.0.0.1:8000/admin/](). Before you do that, you will have to create a superuser. Django
 has packed this process in another command:
 ```bash
@@ -103,9 +101,3 @@ Enter a username and a password. You can leave the e-mail blank for now. Once th
 those credentials to log in into the admin panel, which will provide the following two sections (for now): `Groups` and 
 `Users`. 
 
-
-
-
-
-
-[django-tutorial]: https://docs.djangoproject.com/en/1.10/intro/tutorial01/

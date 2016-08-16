@@ -1,6 +1,6 @@
 # Step 2: Create the `UploadedImage` model and migrations
 Now that we have the basics for django out of the way, we can create our image upload application. 
-If you already did that, continue with [step3.md](Step 3).
+If you already did that, continue with [Step 3](step3.md).
 
 First of all, we need to create a django app that will represent our database model and some basic logic:
 ```bash
@@ -14,8 +14,7 @@ The directory structure should now look like this:
          * `manage.py`
      * `venv`
  
-In the fresh `imageupload` the model needs to be created in 
-[django-rest-imageupload-example/django_rest_imageupload_backend/imageupload/models.py](models.py)
+In the fresh `imageupload` the model needs to be created in [imageupload/models.py](django-rest-imageupload-example/django_rest_imageupload_backend/imageupload/models.py)
 as follows (using Djangos `ImageField`):
 ```python
 from django.db import models
@@ -26,7 +25,7 @@ class UploadedImage(models.Model):
     image = models.ImageField("Uploaded image")
 ```
 
-Furthermore, we need to include the new `imageupload` app and also define `MEDIA_ROOT` aswell as `MEDIA_URL` in [django-rest-imageupload-example/django_rest_imageupload_backend/backend_app/settings.py](settings.py):
+Furthermore, we need to include the new `imageupload` app and also define `MEDIA_ROOT` aswell as `MEDIA_URL` in [backend_app/settings.py](django-rest-imageupload-example/django_rest_imageupload_backend/backend_app/settings.py):
 ```bash
 
 INSTALLED_APPS = [
@@ -52,7 +51,7 @@ and also executing them in our local database:
 python manage.py migrate
 ```
 
-Finally we want this new model to appear on the Django admin panel, therefore we edit [django-rest-imageupload-example/django_rest_imageupload_backend/imageupload/admin.py](admin.py)
+Finally we want this new model to appear on the Django admin panel, therefore we edit [imageupload/admin.py](django-rest-imageupload-example/django_rest_imageupload_backend/imageupload/admin.py)
 as follows:
 ```python
 from django.contrib import admin
@@ -68,7 +67,7 @@ You will quickly find out that uploading the picture is working fine, and it als
 access it. This is because 
 [https://docs.djangoproject.com/en/1.10/howto/static-files/#serving-files-uploaded-by-a-user-during-development](Django does not serve the media files by default) (and you should not do this in a production setup either). 
 
-To overcome this problem we edit [django-rest-imageupload-example/django_rest_imageupload_backend/backend_app/urls.py](backend_app/urls.py) 
+To overcome this problem we edit [backend_app/urls.py](django-rest-imageupload-example/django_rest_imageupload_backend/backend_app/urls.py) 
 as follows:
 ```python
 from django.conf.urls import url
