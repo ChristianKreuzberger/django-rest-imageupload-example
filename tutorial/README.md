@@ -14,4 +14,5 @@ The tutorial is provided in multiple steps:
  * [Step 1](step1.md): Set up the basic Django project structure
  * [Step 2](step2.md): Create the `UploadedImage` model and migrations
  * [Step 3](step3.md): Create the basic REST endpoint
+ * [Step 4](step4.md): Uglify/scramble image names on upload to avoid duplicates
  
