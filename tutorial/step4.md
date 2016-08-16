@@ -32,4 +32,11 @@ def scramble_uploaded_filename(instance, filename):
     return "{}.{}".format(uuid.uuid4(), extension)
 ```
 
-If we upload a file now, it will have a cryptic name, and Django takes care about the rest.
+While this sounds silly, Django will require you to run the migrations stuff again:
+```bash
+python manage.py makemigrations
+```
+The migration is placed in `imageupload/migrations/0002_auto_DATE_TIME.py`, though I like to rename migrations to 
+something that makes more sense to me than _auto_: ``0002_scramble_uploaded_filename_DATE_TIME.py``
+Run migrations using ``python manage.py migrate`` and then try uploading a file using the browsable REST API.
+You will see that the uploaded file now has a cryptic name. Conveniently, Django takes care about (the) rest.
