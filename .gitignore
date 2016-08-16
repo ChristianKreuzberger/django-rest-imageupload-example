@@ -1,0 +1,6 @@
+*.pyc
+db.sqlite3
+venv/
+
+.idea/
+uploaded_media/
