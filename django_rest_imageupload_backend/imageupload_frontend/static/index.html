@@ -18,16 +18,34 @@
 <body>
 
 <div ng-app="imageuploadFrontendApp" ng-controller="MainCtrl">
-    <form class="form" name="form" ng-submit="uploadImage()">
-        <input type="file" files-model="newImage.image">
-        <button type="submit">Save</button>
-    </form>
 
-    <div ng-repeat="image in images track by image.pk">
-        <h3>Image {{ image.pk }}</h3>
-        <a href="{{ image.image }}">{{ image.image }}</a><br />
-        <a ng-click="deleteImage(image)">!! Delete</a><br />
-        <img ng-src="{{ image.image }}" width="800">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <form class="form" name="form" ng-submit="uploadImage()">
+                <label for="inputFile">Select Image:</label>
+                <input id="inputFile" type="file" files-model="newImage.image">
+                <br />
+                <button class="btn btn-primary" type="submit">
+                    Upload
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div ng-if="images.length == 0">
+        There are no images available yet.
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" ng-repeat="image in images track by image.pk">
+            <h3>
+                Image {{ image.pk }}
+                <button class="btn btn-warning" ng-click="deleteImage(image)">Delete</button>
+            </h3>
+            <a href="{{ image.image }}">
+                <img class="img-responsive" ng-src="{{ image.image }}">
+            </a>
+        </div>
     </div>
 </div>
 

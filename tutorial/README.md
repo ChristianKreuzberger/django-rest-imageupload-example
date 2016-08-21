@@ -19,3 +19,4 @@ The tutorial is provided in multiple steps:
  * [Step 6](step6.md): Set up a basic page using AngularJS
  * [Step 7](step7.md): Uploading images from AngularJS
  * [Step 8](step8.md): Deleting an uploaded image
+ * [Step 9](step9.md): Getting Bootstrap CSS Theme for a nicer look and feel
