@@ -9,12 +9,17 @@
     <!-- Include our app -->
     <script src="js/app.js"></script>
     <!-- Include our own controllers, factories, directives, etc... -->
+    <script src="js/filesModelDirective.js"></script>
     <script src="js/images.rest.js"></script>
 </head>
 <body>
 
 <div ng-app="imageuploadFrontendApp" ng-controller="MainCtrl">
-    <textarea rows="10" cols="100">{{ images }}</textarea>
+    <form class="form" name="form" ng-submit="uploadImage()">
+        <input type="file" files-model="newImage.image">
+        <button type="submit">Save</button>
+    </form>
+
     <div ng-repeat="image in images track by image.pk">
         <h3>Image {{ image.pk }}</h3>
         <a href="{{ image.image }}">{{ image.image }}</a><br />

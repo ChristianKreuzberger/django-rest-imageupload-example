@@ -43,6 +43,10 @@ First we need to create our app and a controller in JavaScript. Create a file ca
 ```JavaScript
 var myApp = angular.module('imageuploadFrontendApp', ['ngResource']);
 
+myApp.config(function($resourceProvider) {
+  $resourceProvider.defaults.stripTrailingSlashes = false;
+});
+
 myApp.controller('MainCtrl', function($scope)
 {
     console.log('In main Control');
@@ -124,3 +128,4 @@ using very simple HTML code. We can make use of this and display list of images 
 ```
 
 Refresh the page in your browser and you should see a (not so pretty) list of images.
+Now that we can visually see all images, it makes sense to remove the textarea in `index.html`.
