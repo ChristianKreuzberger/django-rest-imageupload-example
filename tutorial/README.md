@@ -1,14 +1,20 @@
 # Tutorial
-If you follow this tutorial you should be able to re-create the app provided in this repository.
+If you follow this tutorial you should be able to re-create the app which is provided in this repository.
 
-For a good tutorial experience I recommend that
- * you have mastered the [Django Tutorial Polls App](https://docs.djangoproject.com/en/1.10/intro/tutorial01/)
- * you know your way around IDEs and editors (this tutorial is not about PyCharm, we only make good use of it)
- * you have a basic knowledge on how to use Linux Shell and know how to install packages on your system
- * you are comfortable using [virtual environments](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
- * you have some basic knowledge on how HTTP requests work
+## Before you start...
 
+For an optimal tutorial experience I recommend that
+ 1. you have mastered the [Django Tutorial Polls App](https://docs.djangoproject.com/en/1.10/intro/tutorial01/)
+ 1. you know your way around IDEs and editors (this tutorial is not about PyCharm, we only use it; any other editor - e.g. sublime text - should work fine too)
+ 1. you have a basic knowledge on how to use Linux Shell
+ 1. you know how to install packages on your system
+ 1. you are comfortable using [virtual environments](http://docs.python-guide.org/en/latest/dev/virtualenvs/) (you can probably work without them, but it is highly recommended to use them!)
+ 1. you know how to debug your web application in a Browser (we are using FireFox here, but any other Browser should work too)
+ 1. you can do basic programming tasks in JavaScript and Python (at least 3 months experience in both)
+ 
+As a warning: This written tutorial is very superficial. I will however create a YouTube video about it, which I will link within this repository.
 
+## Tutorial Index
 
 The tutorial is provided in multiple steps:
  * [Step 1](step1.md): Set up the basic Django project structure

@@ -17,7 +17,7 @@ The directory structure should now look like this:
          * `manage.py`
      * `venv`
 
-Make sure to add `imageupload_rest` as well as `rest_framework` in [backend_app/settings.py](django-rest-imageupload-example/django_rest_imageupload_backend/backend_app/settings.py):
+Make sure to add `imageupload_rest` as well as `rest_framework` in `backend_app/settings.py`:
 ```python
 INSTALLED_APPS = [
     ...
@@ -71,8 +71,7 @@ Django Rest Framework  Apps are organized as follows:
  * `viewsets.py` (needs to be created) provide the API views and logic, similar to what you would do in `views.py` of a normal django app
  * `serializers.py` (needs to be created) define how certain models should be linked together and serialized 
 
-We will start by creating a serializer for our `UploadedImage` model in 
-[imageupload_rest/serializers.py](django-rest-imageupload-example/django_rest_imageupload_backend/imageupload_rest/serializers.py):
+We will start by creating a serializer for our `UploadedImage` model in `imageupload_rest/serializers.py`:
 ```python
 from rest_framework import serializers
 from imageupload.models import UploadedImage

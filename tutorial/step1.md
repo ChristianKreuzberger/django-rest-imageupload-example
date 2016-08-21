@@ -1,18 +1,23 @@
 # Step 1: Set up the basic Django project structure
-We will start by installing requirements and setting up the project. If you already did that, continue with [Step 2](step2.md).
+We will start by installing requirements and setting up the project.
 
 ## Installing requirements and setting up the virtual environment
-Create a [virtual environment](http://docs.python-guide.org/en/latest/dev/virtualenvs/) and install requirements
+Create a [virtual environment](http://docs.python-guide.org/en/latest/dev/virtualenvs/) and install requirements:
 ```bash
 mkdir django-rest-imageupload-example
 cd django-rest-imageupload-example
 virtualenv -p python3.4 venv # create a virtual python environment
 source venv/bin/activate # activate the virtual environment
-pip install django djangorestframework markdown django-filter Pillow # install requirements
+pip install django djangorestframework markdown django-filter # install requirements
 ```
 
 For [Pillow](https://python-pillow.org/) (a third party library for image uploads in Django) to work properly, you need to install some 
 extra tools (mainly libjpeg and zlib). See [this site](http://pillow.readthedocs.io/en/3.1.x/installation.html#building-on-linux) for details.
+
+Install pillow:
+```bash
+pip install pillow
+```
 
 ## Creating our Django Project
 Create the Django project by executing the following command in a shell:
