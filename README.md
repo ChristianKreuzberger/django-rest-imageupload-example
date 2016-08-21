@@ -1,10 +1,13 @@
 # Django REST Image Upload Example
-This Django app was created for the sole purpose of teaching (and learning). If you are interested in the
-steps I took to write this app, consider reading the [Tutorial](tutorial/README.md) I wrote.
+This Django tutorial app was created for the purpose of demonstrating Django and Django Rest Framework. It shows the basics
+of writing a REST endpoint which allows uploading and retrieving pictures.
+
+I also wrote a [tutorial](tutorial/README.md), though if you just want to try my code out, I suggest using using the Quick Start 
+or the Docker Image below.
 
 
 ## Quick Start
-If you just want to see what this project does:
+Obvious Django Installation Steps
 ```
 git clone https://github.com/ChristianKreuzberger/django-rest-imageupload-example.git
 cd django-rest-imageupload-example
@@ -13,5 +16,9 @@ source venv/bin/activate
 pip install -r requirements.txt
 cd django_rest_imageupload_backend
 python manage.py migrate
-python manage.py runserver
+python manage.py runserver # starts the server 
 ```
+
+
+## Docker Image
+ToDo

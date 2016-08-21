@@ -32,7 +32,7 @@ def scramble_uploaded_filename(instance, filename):
     return "{}.{}".format(uuid.uuid4(), extension)
 ```
 
-While this sounds silly, Django will require you to run the migrations stuff again:
+Although we did not actually change the model, Django requires migrations to be ran again:
 ```bash
 python manage.py makemigrations
 ```
