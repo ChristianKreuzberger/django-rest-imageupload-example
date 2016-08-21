@@ -23,7 +23,7 @@ function transformImageRequest(data) {
 
 
 myApp.factory('Images', function($resource) {
-    return $resource('/api/images/:pk/', {}, {
+    return $resource('/api/images/:pk/', {'pk': '@pk'}, {
         'save': {
             method: 'POST',
             transformRequest: transformImageRequest,

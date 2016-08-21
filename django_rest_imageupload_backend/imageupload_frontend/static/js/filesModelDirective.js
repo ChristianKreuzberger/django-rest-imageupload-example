@@ -13,4 +13,4 @@ function filesModelDirective(){
   };
 }
 
-myApp.directive('filesModel', filesModelDirective)
+myApp.directive('filesModel', filesModelDirective);

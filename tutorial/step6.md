@@ -83,7 +83,7 @@ Open up your browser and look at the console output. You should see the message 
 Create a new file in the `js/` directory called `images.rest.js` with the following content:
 ```JavaScript
 myApp.factory('Images', function($resource) {
-  return $resource('/api/images/:pk');
+  return $resource('/api/images/:pk', {'pk': '@pk'});
 });
 ```
 Make sure to include this new file in `index.html` AFTER `app.js`:

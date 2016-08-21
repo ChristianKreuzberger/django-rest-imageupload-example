@@ -26,4 +26,23 @@ myApp.controller('MainCtrl', function($scope, Images)
             }
         );
     };
+
+
+    $scope.deleteImage = function(image)
+    {
+        image.$delete(
+            function(response)
+            {
+                // success delete
+                console.log('Deleted it');
+                // update $scope.images
+                $scope.images = Images.query();
+            },
+            function(rejection)
+            {
+                console.log('Failed to delete image');
+                console.log(rejection);
+            }
+        );
+    };
 });

@@ -36,7 +36,7 @@ function transformImageRequest(data) {
 Next we need to tell our REST endpoint in JavaScript to use this method to transform the request data:
 ```JavaScript
 myApp.factory('Images', function($resource) {
-    return $resource('/api/images/:pk/', {}, {
+    return $resource('/api/images/:pk/', {'pk': '@pk'}, {
         'save': {
             method: 'POST',
             transformRequest: transformImageRequest,
@@ -64,7 +64,7 @@ function filesModelDirective(){
   };
 }
 
-myApp.directive('filesModel', filesModelDirective)
+myApp.directive('filesModel', filesModelDirective);
 ```
 
 Make sure to include the created JavaScript file in index.html like this:

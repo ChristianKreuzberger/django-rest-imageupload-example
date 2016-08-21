@@ -18,3 +18,4 @@ The tutorial is provided in multiple steps:
  * [Step 5](step5.md): Prepare the frontend application
  * [Step 6](step6.md): Set up a basic page using AngularJS
  * [Step 7](step7.md): Uploading images from AngularJS
+ * [Step 8](step8.md): Deleting an uploaded image
