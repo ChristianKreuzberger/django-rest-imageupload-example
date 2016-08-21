@@ -16,4 +16,4 @@ The tutorial is provided in multiple steps:
  * [Step 3](step3.md): Create the basic REST endpoint
  * [Step 4](step4.md): Uglify/scramble image names on upload to avoid duplicates
  * [Step 5](step5.md): Prepare the frontend application
- * [Step 6](step6.md): Set up Angular and other JS requirements
+ * [Step 6](step6.md): Set up a basic page using AngularJS

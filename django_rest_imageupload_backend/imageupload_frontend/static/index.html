@@ -1,1 +1,26 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <!-- Include Angular and several angular libraries -->
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-resource/angular-resource.min.js"></script>
+
+    <!-- Include our app -->
+    <script src="js/app.js"></script>
+    <!-- Include our own controllers, factories, directives, etc... -->
+    <script src="js/images.rest.js"></script>
+</head>
+<body>
+
+<div ng-app="imageuploadFrontendApp" ng-controller="MainCtrl">
+    <textarea rows="10" cols="100">{{ images }}</textarea>
+    <div ng-repeat="image in images track by image.pk">
+        <h3>Image {{ image.pk }}</h3>
+        <a href="{{ image.image }}">{{ image.image }}</a><br />
+        <img ng-src="{{ image.image }}" width="800">
+    </div>
+</div>
+
+</body>
+</html> 
