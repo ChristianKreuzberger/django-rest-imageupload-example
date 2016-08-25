@@ -86,4 +86,4 @@ urlpatterns = [
 
 ```
 
-You can now access [http://127.0.0.1:8000/] and you should be redirected to `static/index.html` and see the `Hello World` message (or whatever you wrote into index.html).
+You can now access [http://127.0.0.1:8000/]() and you should be redirected to `static/index.html` and see the `Hello World` message (or whatever you wrote into index.html).
