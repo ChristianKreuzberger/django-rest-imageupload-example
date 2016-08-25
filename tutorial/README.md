@@ -22,7 +22,7 @@ Branch: chapter1
 
  * [Step 1](chapter1/step1.md): Set Up the Basic Django Project Structure
  * [Step 2](chapter1/step2.md): Create the `UploadedImage` Model and Migrations
- * [Step 3](chapter1/step3.md): Create the basic REST endpoint
+ * [Step 3](chapter1/step3.md): Create a Basic RESTful Endpoint for `UploadedImage`
  * [Step 4](chapter1/step4.md): Uglify/scramble image names on upload to avoid duplicates
  * [Step 5](chapter1/step5.md): Prepare the frontend application
  * [Step 6](chapter1/step6.md): Set up a basic page using AngularJS

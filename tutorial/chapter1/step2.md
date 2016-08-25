@@ -1,4 +1,4 @@
-# Step 2: Create the `UploadedImage` model and migrations
+# Step 2: Create the `UploadedImage` Model and Migrations
 Now that we have the basics for our Django project out of the way, we can create our image upload application. From now on we will assume
 that we are working on the Django project directory `django_rest_imageupload_backend`.
 
