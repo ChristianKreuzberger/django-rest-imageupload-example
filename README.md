@@ -5,6 +5,8 @@ of writing a REST endpoint which allows uploading and retrieving pictures.
 I also wrote a [tutorial](tutorial/README.md), though if you just want to try my code out, I suggest using using the Quick Start 
 or the Docker Image below.
 
+Be aware that there are multiple branches, one for each chapter of the tutorial.
+
 As a warning: The tutorial is very superficial. I will however create a YouTube video about it, which I will link within this repository.
 
 ## Quick Start

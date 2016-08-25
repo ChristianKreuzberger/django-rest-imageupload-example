@@ -85,7 +85,7 @@ admin.site.register(UploadedImage)
 ## Admin Panel
 Go to the Django admin panel at [http://127.0.0.1:8000/admin/]() (or just refresh the page if you already have it opened).
 You should see the new `Uploaded Images` model. 
-![Django admin with ImageUpload](img/django_admin-imageupload.png)
+![Django admin with ImageUpload](img/django_admin_imageupload.png)
 
 Try adding pictures using *Add*. You will quickly find out that uploading the picture is working fine, 
 and it also appears in the `uploaded_media/` (or whatever defined as `MEDIA_ROOT` in `settings.py`) folder, but you can not
