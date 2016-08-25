@@ -70,11 +70,12 @@ In this case we want to define the `django_rest_imageupload_backend` directory a
 _sources root_ in PyCharm, by right-clicking it and selecting _Mark directory as_ and _Sources root_.
 
 
+## Running the Django Dev Server
 Another useful feature of Pycharm is that you can _run your code_ (in this case the 
 [Django dev server](https://docs.djangoproject.com/en/1.10/intro/tutorial01/#the-development-server)):
  
  1. Open the _run configuration_ on the top right of the window (to the left of the currently grayed out _Play_ icon).
-    ![Run configuration](img/edit_configuration.png)
+    ![Open configuration](img/edit_configuration.png)
  1. Click on _Edit configuration_
  1. A new dialog will apear. Create a new Python configuration by clicking on the plus icon on the top left.
  1. As a script, select the `manage.py` script in `django-rest-imageupload-example/django_rest_imageupload_backend/`
@@ -83,16 +84,21 @@ Another useful feature of Pycharm is that you can _run your code_ (in this case 
  1. The python interpreter should be Python 3.4 in your virtual environment `venv`
  1. Give the run configuration a good name (e.g., *Django Run Server*) 
  1. Optional, but recommended: Make a tick at _Single instance only_, avoiding the django server to be ran more than once
- 1. Hit apply button 8save it)
- 1. Run it
+ 1. A summary of the fields that need to be filled is provided in the image below:
+    ![Create a new run configuration](img/run_configuration.png)
+ 1. Hit apply button to save it
+
+Once you are done, you can run the server by pressing the green Play button.
  
-Alternatively, you can just run the following command from shell (assuming that you are in the main folder of this project)
+Alternatively, you can just run the Django dev server by using the following command (assuming that you still are in the root folder):
 ```bash
-cd django_rest_imageupload_backend
+cd django_rest_imageupload_backend # change into the Django project folder
 python manage.py runserver
 ```
 
-If everything went according to our plans, you should the following message (either in PyCharm or in a shell):
+
+If everything went well (either by using Pycharms run configuration or by starting the server in a terminal), 
+you should the following message:
 ```
 Performing system checks...
 
@@ -106,17 +112,25 @@ Starting development server at http://127.0.0.1:8000/
 Quit the server with CONTROL-C.
 ```
 
+As the last line of this message tells you, you can shut down the server by pressing CONTROL and C (or by pressing the stop button in Pycharm).
 
-Looks like we have 13 unapplied [migrations](https://docs.djangoproject.com/en/1.10/topics/migrations/)! Let's quickly fix them by running the following command in a shell:
+## Migrations
+Although we just started the project, it looks like there are 13 un-applied [migrations](https://docs.djangoproject.com/en/1.10/topics/migrations/). 
+Those migrations come directly from Django, and are part of an upgrade-path for various Django versions.
+
+We can quickly fix that by running the following command in a terminal (assuming that you still are in the root folder):
 ```bash
+cd django_rest_imageupload_backend # change into the Django project folder
 python manage.py migrate
 ```
 
+Done! You can now start the server again (if you stopped it) and try to access [http://127.0.0.1.8000]() in a browser.
+However, you will not be able to see much, except for a message telling you that you that _It worked!_. 
+![Django server is running](img/runserver_it_worked.png)
 
-You can try to access [http://127.0.0.1.8000]() in a browser, but you will not be able to see much, except for a message
-telling you that you that _It worked!_. However, Django comes with a handy [admin panel](https://docs.djangoproject.com/en/1.10/ref/contrib/admin/), which you can 
+Nevertheless, Django comes with a handy [admin panel](https://docs.djangoproject.com/en/1.10/ref/contrib/admin/), which you can 
 access by going to [http://127.0.0.1:8000/admin/](). Before you do that, you will have to create a superuser. Django
-has packed this process in another command:
+has packed this process into a useful `manage` command:
 ```bash
 python manage.py createsuperuser
 ```
@@ -124,3 +138,4 @@ Enter a username and a password. You can leave the e-mail blank for now. Once th
 those credentials to log in into the admin panel, which will provide the following two sections (for now): `Groups` and 
 `Users`. 
 
+![Django admin panel](img/runserver_django_admin.png)
