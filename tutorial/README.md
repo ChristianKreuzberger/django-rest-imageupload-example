@@ -25,10 +25,10 @@ Branch: chapter1
  * [Step 3](chapter1/step3.md): Create a Basic RESTful Endpoint for `UploadedImage`
  * [Step 4](chapter1/step4.md): Uglify/scramble Image names on Upload to Avoid Duplicates
  * [Step 5](chapter1/step5.md): Prepare the Frontend Application
- * [Step 6](chapter1/step6.md): Set up a basic page using AngularJS
- * [Step 7](chapter1/step7.md): Uploading images from AngularJS
- * [Step 8](chapter1/step8.md): Deleting an uploaded image
- * [Step 9](chapter1/step9.md): Getting Bootstrap CSS Theme for a nicer look and feel
+ * [Step 6](chapter1/step6.md): Set up a Basic AngularJS Single Page Application
+ * [Step 7](chapter1/step7.md): Uploading Images using AngularJS
+ * [Step 8](chapter1/step8.md): Deleting an Uploaded Image
+ * [Step 9](chapter1/step9.md): Getting Bootstrap CSS Theme for a nicer Look and Feel
  
  
 ### Chapter 2: Generating Thumbnails

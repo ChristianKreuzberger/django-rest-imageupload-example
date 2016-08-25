@@ -1,19 +1,24 @@
-# Step 8: Deleting an uploaded image
-We already have the hardest part, [uploading an image](step7.md) out of the way. Deleting an 
-image is straightforward. 
+# Step 8: Deleting an Uploaded Image
+While uploading a new image was quite some work, deleting it is rather easy.
 
-## Add a delete button
-First we are adding a delete button in our `index.html` view:
+## Add a Delete Button in the View
+First we are adding a delete button in our view `static/index.html` for each image:
 ```HTML
+<!-- Main Division -->
+<div ng-app="imageuploadFrontendApp" ng-controller="MainCtrl">
+    ...
     <div ng-repeat="image in images track by image.pk">
         <h3>Image {{ image.pk }}</h3>
         <a href="{{ image.image }}">{{ image.image }}</a><br />
         <a ng-click="deleteImage(image)">!! Delete</a><br />
         <img ng-src="{{ image.image }}" width="800">
     </div>
+    ...
+</div>
 ```
 
-## Add the deleteImage method in MainCtrl
+## Add the deleteImage Method in MainCtrl
+Second we add a delete method (which is called on `ng-click` on the delete button):
 ```JavaScript
 
 myApp.controller('MainCtrl', function($scope, Images)
@@ -39,8 +44,7 @@ myApp.controller('MainCtrl', function($scope, Images)
     };
 });
 ```
+If `delete` is successful, we refresh the images array, else we log an error message.
 
 
 Refresh the page in your browser and try deleting images. 
-
-This page does not look very fancy, in fact, it's ugly. We are going to change this in [Step 9](step9.html) by adding the Bootstrap CSS theme.

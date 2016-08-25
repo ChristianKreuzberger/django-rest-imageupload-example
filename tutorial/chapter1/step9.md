@@ -1,4 +1,4 @@
-# Step 9: Getting Bootstrap CSS Theme for a nicer look and feel
+# Step 9: Getting Bootstrap CSS Theme for a nicer Look and Feel
 As the last step here we will make our page look much nicer. To accomplish this, we will use 
 [Bootstrap](http://getbootstrap.com/).
  
@@ -10,16 +10,7 @@ npm install bootstrap@3
 Now we just need to include the `node_modules/bootstrap/dist/css/bootstrap.min.css` in `index.html`:
 ```HTML
 <head>
-    <meta charset="utf-8">
-    <!-- Include Angular and several angular libraries -->
-    <script src="node_modules/angular/angular.min.js"></script>
-    <script src="node_modules/angular-resource/angular-resource.min.js"></script>
-
-    <!-- Include our app -->
-    <script src="js/app.js"></script>
-    <!-- Include our own controllers, factories, directives, etc... -->
-    <script src="js/filesModelDirective.js"></script>
-    <script src="js/images.rest.js"></script>
+    ...
     
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
@@ -27,9 +18,11 @@ Now we just need to include the `node_modules/bootstrap/dist/css/bootstrap.min.c
 ```
 
 ## Styling the page
-First we are going to wrap the upload form into a panel and make the buttons look nicer:
+First we are going to wrap the upload form into a panel, and also style the button with CSS classes look nicer:
 ```HTML
+<!-- Main Div -->
 <div ng-app="imageuploadFrontendApp" ng-controller="MainCtrl">
+    <!-- Panel for Uploading a new Image -->
     <div class="panel panel-default">
         <div class="panel-body">
             <form class="form" name="form" ng-submit="uploadImage()">
@@ -47,7 +40,7 @@ First we are going to wrap the upload form into a panel and make the buttons loo
 ```
 
 
-Second we are going to add an info text in case there are no images available:
+Second we are going to add an info text in case there are no images available, by making use of `ng-if`:
 ```HTML
 <div ng-app="imageuploadFrontendApp" ng-controller="MainCtrl">
     ...
@@ -78,4 +71,4 @@ Last but not least we are going to use Bootstraps responsive grid for displaying
 </div>
 ```
 
-The final result should be a page that is functional and looks pretty. (well, not too pretty, as I am not a designer)
+The final result should be a page that is functional and has a nice(r) look and feel.
