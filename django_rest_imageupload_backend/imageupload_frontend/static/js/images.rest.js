@@ -21,7 +21,10 @@ function transformImageRequest(data) {
     return fd;
 }
 
-
+/**
+ * REST API Endpoint for Images
+ * uses the field 'pk' as an URL parameter
+*/
 myApp.factory('Images', function($resource) {
     return $resource('/api/images/:pk/', {'pk': '@pk'}, {
         'save': {

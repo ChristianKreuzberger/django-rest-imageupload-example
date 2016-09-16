@@ -13,4 +13,5 @@ function filesModelDirective(){
   };
 }
 
+// register directive in our app
 myApp.directive('filesModel', filesModelDirective);
