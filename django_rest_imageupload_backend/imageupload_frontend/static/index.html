@@ -12,6 +12,7 @@
     <script src="js/filesModelDirective.js"></script>
     <script src="js/images.rest.js"></script>
 
+
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
@@ -43,7 +44,7 @@
                 <button class="btn btn-warning" ng-click="deleteImage(image)">Delete</button>
             </h3>
             <a href="{{ image.image }}">
-                <img class="img-responsive" ng-src="{{ image.image }}">
+                <img class="img-responsive" ng-src="{{ image.thumbnail }}">
             </a>
         </div>
     </div>

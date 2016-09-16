@@ -1,3 +1,4 @@
+"use strict";
 // image upload is tricky, see: http://stackoverflow.com/a/21115779
 function transformImageRequest(data) {
     if (data === undefined)

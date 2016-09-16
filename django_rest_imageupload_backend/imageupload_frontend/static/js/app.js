@@ -1,3 +1,4 @@
+"use strict";
 var myApp = angular.module('imageuploadFrontendApp', ['ngResource']);
 
 /**
@@ -61,3 +62,5 @@ myApp.controller('MainCtrl', function($scope, Images)
         );
     };
 });
+
+
