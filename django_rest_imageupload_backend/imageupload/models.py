@@ -13,23 +13,24 @@ def scramble_uploaded_filename(instance, filename):
 
 
 # creates a thumbnail of an existing image
-def create_thumbnail(model_image, thumbnail_size=(256, 256)):
+def create_thumbnail(input_image, thumbnail_size=(256, 256)):
     # check if image has been set
-    if not model_image:
+    if not input_image or input_image == "":
         return
 
     # open image
-    image = Image.open(model_image)
+    image = Image.open(input_image)
 
-    # use PILs thumbnail method; use anti aliasing to make the scaled picture look "okay"
+    # use PILs thumbnail method; use anti aliasing to make the scaled picture looks "okay"
     image.thumbnail(thumbnail_size, Image.ANTIALIAS)
 
-    # parse the filename and add _thumb to it
-    filename = scramble_uploaded_filename(None, os.path.basename(model_image.name))
+    # parse the filename and scramble it
+    filename = scramble_uploaded_filename(None, os.path.basename(input_image.name))
     arrdata = filename.split(".")
     # extension is in the last element, pop it
     extension = arrdata.pop()
     basename = "".join(arrdata)
+    # add _thumb to the filename
     new_filename = basename + "_thumb." + extension
 
     # save the image in MEDIA_ROOT and return the filename

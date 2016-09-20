@@ -31,10 +31,13 @@ Branch: chapter1
  * [Step 9](chapter1/step9.md): Getting Bootstrap CSS Theme for a nicer Look and Feel
  
  
-### Chapter 2: Generating Thumbnails
+### Chapter 2: Generating Thumbnails and Adding Title and Description
 Branch: chapter2
 
-### Chapter 3: User Management
+ * [Step 1](chapter2/step1.md): Automatically Creating the Thumbnail in the Django Model
+ * [Step 2](chapter2/step2.md): Extending the Backend and the Frontend to Use the Thumbnail
+ * [Step 3](chapter3/step3.md): Adding Title and Description
 
+### Chapter 3: User Management
 
 ### Chapter 4: Notes and Comments
