@@ -42,7 +42,10 @@ INSTALLED_APPS = [
 MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'uploaded_media')
 MEDIA_URL = '/media/'
 ```
-Please note that we have set the `MEDIA_ROOT` to something outside of the django root directory on purpose
+Please note that we have set the `MEDIA_ROOT` to something outside of the django root directory on purpose (hence the '..'). You also have to create this directory in your structure using `mkdir`, assuming that you are in the `django_rest_imageupload_backend/` folder:
+```bash
+mkdir ../uploaded_media
+```
 
 That's it, our `backend_app` is now aware of our new model. Though the database still needs to be made aware of the new model...
 
