@@ -1,6 +1,6 @@
 # Extending the Backend and the Frontend to Use the Thumbnail
 
-## REST API
+## Backend (REST API)
 Now that our model has a thumbnail, we can tell our REST API to provide the `thumbnail` field by 
 editing `imageupload_rest/serializers.py` and adding the `thumbnail` field to the `fields` list
 as follows:
@@ -26,4 +26,4 @@ with
 <img class="img-responsive" ng-src="{{ image.thumbnail }}">
 ```
 
-Now that's really it! We now have thumbnails in our little app.
+We now have thumbnails in our little app.

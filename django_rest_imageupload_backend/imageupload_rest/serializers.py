@@ -7,5 +7,5 @@ from imageupload.models import UploadedImage
 class UploadedImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = UploadedImage
-        fields = ('pk', 'image', 'thumbnail',)
+        fields = ('pk', 'image', 'thumbnail', 'title', 'description', )
 

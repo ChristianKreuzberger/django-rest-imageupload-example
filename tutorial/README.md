@@ -36,7 +36,7 @@ Branch: chapter2
 
  * [Step 1](chapter2/step1.md): Automatically Creating the Thumbnail in the Django Model
  * [Step 2](chapter2/step2.md): Extending the Backend and the Frontend to Use the Thumbnail
- * [Step 3](chapter3/step3.md): Adding Title and Description
+ * [Step 3](chapter3/step3.md): Adding a Title and Description
 
 ### Chapter 3: User Management
 

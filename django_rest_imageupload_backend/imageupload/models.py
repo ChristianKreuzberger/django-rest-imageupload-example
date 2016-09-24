@@ -47,13 +47,20 @@ class UploadedImage(models.Model):
     # thumbnail
     thumbnail = models.ImageField("Thumbnail of uploaded image", blank=True)
 
+    # title and description
+    title = models.CharField("Title of the uploaded image", max_length=255, default="Unknown Picture")
+    description = models.TextField("Description of the uploaded image", default="")
+
+    def __str__(self):
+        return self.title
+
     def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
         # generate and set thumbnail or none
         self.thumbnail = create_thumbnail(self.image)
 
         # Check if a pk has been set, meaning that we are not creating a new image, but updateing an existing one
-        if self.pk:
-            force_update = True
+        #if self.pk:
+        #    force_update = True
 
         # force update as we just changed something
         super(UploadedImage, self).save(force_update=force_update)
