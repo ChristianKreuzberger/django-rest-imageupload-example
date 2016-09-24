@@ -38,4 +38,42 @@ You can now go to the browsable API and see the changes immediately.
 
 
 ## Update the Frontend
-Now this is the part that involves the most effort. 
+Displaying the title and description is easy. Open `imageupload_frontend/static/index.html` and edit 
+the part where the image is displayed as follows:
+```HTML
+<div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" ng-repeat="image in images track by image.pk">
+            <h3>
+                {{ image.title }}
+                <button class="btn btn-warning" ng-click="deleteImage(image)">Delete</button>
+            </h3>
+            <a href="{{ image.image }}">
+                <img class="img-responsive" ng-src="{{ image.thumbnail }}">
+                <p>{{ image.description }}</p>
+            </a>
+        </div>
+    </div>
+```
+
+Last but not least, we have to add two input fields to the `Upload` form in `imageupload_frontend/static/index.html`:
+```HTML
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <form class="form" name="form" ng-submit="uploadImage()">
+                <label for="inputFile">Select Image:</label>
+                <input id="inputFile" type="file" files-model="newImage.image">
+                <br />
+                <label for="title">Title</label>
+                <input type="text" id="title" ng-model="newImage.title"><br />
+
+                <label for="description">Description</label>
+                <textarea id="description" ng-model="newImage.description"></textarea><br />
+                <button class="btn btn-primary" type="submit">
+                    Upload
+                </button>
+            </form>
+        </div>
+    </div>
+```
+
+That's it! You can now go to the website and enter a title and description before uploading an image!
