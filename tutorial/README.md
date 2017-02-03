@@ -14,11 +14,9 @@ For an optimal tutorial experience I recommend that
  
 As a warning: This written tutorial is very superficial. I will however create a YouTube video about it, which I will link within this repository.
 
-## Tutorial Index
-This tutorial has multiple chapters, where each chapter is also available as a branch. 
 
-### Chapter 1: The Base Application
-Branch: chapter1
+## Chapter 1: The Base Application
+In this chapter we are going to set up the development environment and create a basic REST API as well as a frontend for it.
 
  * [Step 1](chapter1/step1.md): Set Up the Basic Django Project Structure
  * [Step 2](chapter1/step2.md): Create the `UploadedImage` Model and Migrations
@@ -31,13 +29,16 @@ Branch: chapter1
  * [Step 9](chapter1/step9.md): Getting Bootstrap CSS Theme for a nicer Look and Feel
  
  
-### Chapter 2: Generating Thumbnails and Adding Title and Description
-Branch: chapter2
+## Chapter 2: Generating Thumbnails and Adding Title and Description
+In this chapter we are going to add more fields to our data model and automatically generate thumbnails for the uploaded images.
 
  * [Step 1](chapter2/step1.md): Automatically Creating the Thumbnail in the Django Model
- * [Step 2](chapter2/step2.md): Extending the Backend and the Frontend to Use the Thumbnail
- * [Step 3](chapter3/step3.md): Adding a Title and Description
+ * [Step 2](chapter2/step2.md): Extending the Backend and the Frontend to provide the Thumbnail
+ * [Step 3](chapter2/step3.md): Adding a Title and Description to each Image
+ * [Step 4](chapter2/step4.md): Preview the image before uploading
 
-### Chapter 3: User Management
+## Chapter 3: User Management
+In this chapter we are going to add users and authentication to our project. 
 
-### Chapter 4: Notes and Comments
+## Chapter 4: Comments
+Now that we have users, we can let users comment on pictures.

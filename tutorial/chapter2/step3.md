@@ -1,4 +1,4 @@
-# Adding a Title and Description
+# Adding a Title and Description to each Image
 
 We now want to extend the `UploadedImage` model with a title and a description.
 Django makes this process very easy, as we only have to add two fields to the
@@ -13,7 +13,8 @@ Open `imageupload/models.py` and add the following two fields to the `UploadedIm
     
 ```
 
-In addition, we should now provide a `__str__` method for this model, returning the title of the image.
+In addition, we should always provide a `__str__` method for every model. Now that our model contains a string, we
+can return the title of the image:
 ```python
     def __str__(self):
         return self.title
@@ -31,6 +32,7 @@ class UploadedImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = UploadedImage
         fields = ('pk', 'image', 'thumbnail', 'title', 'description', )
+        read_only_fields = ('thumbnail',)
 
 ```
 

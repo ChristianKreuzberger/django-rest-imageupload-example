@@ -2,15 +2,17 @@
 
 Serving thumbnails, scaled-down versions of the uploaded images, can be accomplished by multiple ways, for instance:
 
- * Create thumbnails on the fly when they are requested (needs intelligent caching logic)
+ * Create thumbnails on the fly when they are requested (can be done, but will need an intelligent caching logic)
  * Create thumbnails when the original image has been uploaded
  * Create thumbnails using a cron job
  * A mix of all three
  
-Regardless of your choice you should *always* store the original image, to avoid issues when you change the 
-thumbnail size or want to do something with the image. For this tutorial, we chose to create thumbnails when 
-the original image is being uploaded, therefore we need to adapt our model. The main reason behind this is to
-only adapt the model, ensuring that whenever the model is used, a thumbnail is avaialble.
+Regardless of your choice you should *always* store the original image. This is done to avoid issues in the future, 
+for instance when you decide that it is time to increase the thumbnail size, or you want to apply some filters to the 
+original image. 
+
+For this tutorial, we chose to create thumbnails when the original image is being uploaded, therefore we need to adapt 
+our Django model. 
 
 ## Adding Another ImageField 
 First we need to adapt our database schema. Therefore open `imageupload/models.py` and edit the `UploadedImage` 
@@ -35,8 +37,8 @@ while the second command executes the migration. This creates the column in our 
 model via the admin panel. 
 
 ## Creating a Thumbnail
-Just naming the column `thumbnail` will not create a thumbnail. We have to implement our thumbnail logic, and we 
-will do that in the `save` method of the model.
+Just naming the column `thumbnail` will obviously not create a thumbnail. We have to implement our thumbnail logic, and
+we will do that in the `save` method of the model.
 
 Open `imageupload/models.py` and edit the `UploadedImage` model by creating the `save` method:
 ```python
@@ -47,8 +49,8 @@ class UploadedImage(models.Model):
         super(UploadedImage, self).save()
 ```
 
-This method will be called every time a new entry is created or an existing entry is updated. An instance of
-`UploadedImage` is also available in `self`, therefore we are able to create a method that reads `self.ìmage`,
+This method will be called every time a new or an existing ``UploadedImage``-object is to be stored in the database. 
+The current instance of ``UploadedImage`` is made available in ``self``, therefore we are able to create a method that reads `self.ìmage`,
 scales it to a thumbnail, and stores it in `self.thumbnail`. First we are going to create a function in 
 `imageupload/models.py` for scaling the image using `pil`:
 ```python
@@ -56,14 +58,14 @@ from PIL import Image
 
 # creates a thumbnail of an existing image
 def create_thumbnail(input_image, thumbnail_size=(256, 256)):
-    # check if image has been set
+    # make sure an image has been set
     if not input_image or input_image == "":
         return
 
     # open image
     image = Image.open(input_image)
 
-    # use PILs thumbnail method; use anti aliasing to make the scaled picture looks "okay"
+    # use PILs thumbnail method; use anti aliasing to make the scaled picture look good
     image.thumbnail(thumbnail_size, Image.ANTIALIAS)
 
     # parse the filename and scramble it

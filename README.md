@@ -16,6 +16,7 @@ Installation Steps if you want to try it out
 ```bash
 git clone https://github.com/ChristianKreuzberger/django-rest-imageupload-example.git
 cd django-rest-imageupload-example
+mkdir uploaded_media # create a directory for the uploaded images
 virtualenv -p python3.4 venv # Note: python3.5 should also work
 source venv/bin/activate
 pip install -r requirements.txt

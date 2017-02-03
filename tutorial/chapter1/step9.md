@@ -21,21 +21,23 @@ Now we just need to include the `node_modules/bootstrap/dist/css/bootstrap.min.c
 First we are going to wrap the upload form into a panel, and also style the button with CSS classes look nicer:
 ```HTML
 <!-- Main Div -->
-<div ng-app="imageuploadFrontendApp" ng-controller="MainCtrl">
-    <!-- Panel for Uploading a new Image -->
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <form class="form" name="form" ng-submit="uploadImage()">
-                <label for="inputFile">Select Image:</label>
-                <input id="inputFile" type="file" files-model="newImage.image">
-                <br />
-                <button class="btn btn-primary" type="submit">
-                    Upload
-                </button>
-            </form>
+<div class="container-fluid">
+    <div ng-app="imageuploadFrontendApp" ng-controller="MainCtrl">
+        <!-- Panel for Uploading a new Image -->
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form class="form" name="form" ng-submit="uploadImage()">
+                    <label for="inputFile">Select Image:</label>
+                    <input id="inputFile" type="file" files-model="newImage.image">
+                    <br />
+                    <button class="btn btn-primary" type="submit">
+                        Upload
+                    </button>
+                </form>
+            </div>
         </div>
+        ...
     </div>
-    ...
 </div>
 ```
 
@@ -54,18 +56,20 @@ Second we are going to add an info text in case there are no images available, b
 
 Last but not least we are going to use Bootstraps responsive grid for displaying images in a row with several columns:
 ```HTML
-<div ng-app="imageuploadFrontendApp" ng-controller="MainCtrl">
-    ...
-
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" ng-repeat="image in images track by image.pk">
-            <h3>
-                Image {{ image.pk }}
-                <button class="btn btn-warning" ng-click="deleteImage(image)">Delete</button>
-            </h3>
-            <a href="{{ image.image }}">
-                <img class="img-responsive" ng-src="{{ image.image }}">
-            </a>
+<div class="container-fluid">
+    <div ng-app="imageuploadFrontendApp" ng-controller="MainCtrl">
+        ...
+    
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" ng-repeat="image in images track by image.pk">
+                <h3>
+                    Image {{ image.pk }}
+                    <button class="btn btn-warning" ng-click="deleteImage(image)">Delete</button>
+                </h3>
+                <a href="{{ image.image }}">
+                    <img class="img-responsive" ng-src="{{ image.image }}">
+                </a>
+            </div>
         </div>
     </div>
 </div>

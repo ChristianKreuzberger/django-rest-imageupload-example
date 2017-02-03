@@ -6,22 +6,32 @@ from django.db import models
 from django.conf import settings
 
 
-# scramble/uglify the filename of the uploaded file, keep the file extension though
 def scramble_uploaded_filename(instance, filename):
+    """
+    Scramble / uglify the filename of the uploaded file, but keep the files extension (e.g., .jpg or .png)
+    :param instance:
+    :param filename:
+    :return:
+    """
     extension = filename.split(".")[-1]
     return "{}.{}".format(uuid.uuid4(), extension)
 
 
-# creates a thumbnail of an existing image
 def create_thumbnail(input_image, thumbnail_size=(256, 256)):
-    # check if image has been set
+    """
+    Create a thumbnail of an existing image
+    :param input_image:
+    :param thumbnail_size:
+    :return:
+    """
+    # make sure an image has been set
     if not input_image or input_image == "":
         return
 
     # open image
     image = Image.open(input_image)
 
-    # use PILs thumbnail method; use anti aliasing to make the scaled picture looks "okay"
+    # use PILs thumbnail method; use anti aliasing to make the scaled picture look good
     image.thumbnail(thumbnail_size, Image.ANTIALIAS)
 
     # parse the filename and scramble it
@@ -39,9 +49,10 @@ def create_thumbnail(input_image, thumbnail_size=(256, 256)):
     return new_filename
 
 
-# UploadedImage Model
-# provides an ImageField, where the filename is scrambled by scramble_uploaded_filename
 class UploadedImage(models.Model):
+    """
+    Provides a Model which contains an uploaded image aswell as a thumbnail
+    """
     image = models.ImageField("Uploaded image", upload_to=scramble_uploaded_filename)
 
     # thumbnail
@@ -55,6 +66,14 @@ class UploadedImage(models.Model):
         return self.title
 
     def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
+        """
+        On save, generate a new thumbnail
+        :param force_insert:
+        :param force_update:
+        :param using:
+        :param update_fields:
+        :return:
+        """
         # generate and set thumbnail or none
         self.thumbnail = create_thumbnail(self.image)
 
