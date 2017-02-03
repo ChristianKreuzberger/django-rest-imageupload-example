@@ -36,6 +36,7 @@ In this chapter we are going to add more fields to our data model and automatica
  * [Step 2](chapter2/step2.md): Extending the Backend and the Frontend to provide the Thumbnail
  * [Step 3](chapter2/step3.md): Adding a Title and Description to each Image
  * [Step 4](chapter2/step4.md): Preview the image before uploading
+ * [Step 5](chapter2/step5.md): Fixing the flickering when deleting images
 
 ## Chapter 3: User Management
 In this chapter we are going to add users and authentication to our project. 

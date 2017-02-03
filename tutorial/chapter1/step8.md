@@ -9,7 +9,7 @@ First we are adding a delete button in our view `static/index.html` for each ima
     ...
     <div ng-repeat="image in images track by image.pk">
         <h3>Image {{ image.pk }}</h3>
-        <a href="{{ image.image }}">{{ image.image }}</a><br />
+        <a ng-href="{{ image.image }}">{{ image.image }}</a><br />
         <a ng-click="deleteImage(image)">!! Delete</a><br />
         <img ng-src="{{ image.image }}" width="800">
     </div>

@@ -127,7 +127,7 @@ We can make use of this and display list of images by using the following HTML c
 <div ng-app="imageuploadFrontendApp" ng-controller="MainCtrl">
     <div ng-repeat="image in images track by image.pk">
         <h3>Image {{ image.pk }}</h3>
-        <a href="{{ image.image }}">{{ image.image }}</a><br />
+        <a ng-href="{{ image.image }}">{{ image.image }}</a><br />
         <img ng-src="{{ image.image }}" width="800">
     </div>
 
