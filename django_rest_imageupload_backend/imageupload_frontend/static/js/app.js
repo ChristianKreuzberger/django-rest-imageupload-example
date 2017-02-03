@@ -1,17 +1,17 @@
 "use strict";
-var myApp = angular.module('imageuploadFrontendApp', ['ngResource']);
+var myApp = angular.module('imageuploadFrontendApp', ['ngResource', 'ngFileUpload']);
 
 /**
  * Configure our angular app
-*/
+ */
 myApp.config(function($resourceProvider) {
-  $resourceProvider.defaults.stripTrailingSlashes = false;
+    $resourceProvider.defaults.stripTrailingSlashes = false;
 });
 
 /**
  * Main Controller of our App
  * Handles the image upload within the frontend
-*/
+ */
 myApp.controller('MainCtrl', function($scope, Images)
 {
     console.log('In main Control');
@@ -40,7 +40,7 @@ myApp.controller('MainCtrl', function($scope, Images)
 
     /**
      * Delete an image on Button Press
-    */
+     */
     $scope.deleteImage = function(image)
     {
         // call REST API endpoint

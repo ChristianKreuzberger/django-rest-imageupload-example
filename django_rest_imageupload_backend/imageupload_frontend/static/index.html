@@ -3,13 +3,15 @@
 <head>
     <meta charset="utf-8">
     <!-- Include Angular and several angular libraries -->
-    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular/angular.js"></script>
     <script src="node_modules/angular-resource/angular-resource.min.js"></script>
+    <script src="node_modules/ng-file-upload/dist/ng-file-upload.min.js"></script>
 
     <!-- Include our app -->
     <script src="js/app.js"></script>
     <!-- Include our own controllers, factories, directives, etc... -->
     <script src="js/filesModelDirective.js"></script>
+    <script src="js/fileReaderService.js"></script>
     <script src="js/images.rest.js"></script>
 
     <!-- Include Bootstrap CSS -->
@@ -23,14 +25,25 @@
         <div class="panel panel-default">
             <div class="panel-body">
                 <form class="form" name="form" ng-submit="uploadImage()">
-                    <label for="inputFile">Select Image:</label>
-                    <input id="inputFile" type="file" files-model="newImage.image">
-                    <br />
-                    <label for="title">Title</label>
-                    <input type="text" id="title" ng-model="newImage.title"><br />
-
-                    <label for="description">Description</label>
-                    <textarea id="description" ng-model="newImage.description"></textarea><br />
+                    <div class="form-group">
+                        <label for="file">Select an Image:</label>
+                        <input type="file" ngf-select ng-model="newImage.image" name="file"
+                               class="form-control"
+                               accept="image/*" ngf-max-size="10MB" required
+                               ngf-model-invalid="errorFile">
+                        <i ng-show="form.file.$error.maxSize">File too large
+                            {{ errorFile.size / 1000000 | number:1 }} MB: max 10M</i>
+                        <img ng-show="form.file.$valid" ngf-thumbnail="newImage.image" class="img-responsive">
+                        <button class="btn btn-warning" ng-click="newImage.image = null" ng-show="newImage.image">Remove</button>
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" id="title" class="form-control" ng-model="newImage.title">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea id="description" class="form-control" ng-model="newImage.description"></textarea>
+                    </div>
                     <button class="btn btn-primary" type="submit">
                         Upload
                     </button>

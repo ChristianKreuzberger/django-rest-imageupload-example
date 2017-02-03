@@ -78,4 +78,30 @@ Last but not least, we have to add two input fields to the `Upload` form in `ima
     </div>
 ```
 
+However, this looks a little weird. We can make this look a lot better by wrapping ``<div class="form-group">`` around our
+labels input fields, and applying ``class="form-control"`` to the input fields:
+```HTML
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <form class="form" name="form" ng-submit="uploadImage()">
+                <div class="form-group">
+                    <label for="inputFile">Select Image:</label>
+                    <input id="inputFile" type="file" files-model="newImage.image">
+                </div>
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" ng-model="newImage.title">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" ng-model="newImage.description"></textarea>
+                </div>
+                <button class="btn btn-primary" type="submit">
+                    Upload
+                </button>
+            </form>
+        </div>
+    </div>
+```
+
 That's it! You can now go to the website and enter a title and description before uploading an image!
