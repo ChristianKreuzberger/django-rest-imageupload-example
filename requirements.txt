@@ -1,5 +1,5 @@
-Django==1.10
+Django>=1.10,<1.11
 Markdown==2.6.6
 Pillow==3.3.0
 django-filter==0.14.0
-djangorestframework==3.4.4
+djangorestframework>=3.5,<4

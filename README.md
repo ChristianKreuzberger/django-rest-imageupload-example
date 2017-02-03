@@ -13,10 +13,10 @@ There is also a YouTube series about this tutorial:
 
 ## Quick Start
 Installation Steps if you want to try it out
-```
+```bash
 git clone https://github.com/ChristianKreuzberger/django-rest-imageupload-example.git
 cd django-rest-imageupload-example
-virtualenv -p python3.4 venv
+virtualenv -p python3.4 venv # Note: python3.5 should also work
 source venv/bin/activate
 pip install -r requirements.txt
 cd django_rest_imageupload_backend
@@ -24,6 +24,13 @@ python manage.py migrate
 python manage.py runserver # starts the server 
 ```
 
+## Requirements
+* Python 3.4+
+* Django 1.10
+* Django Rest Framework 3.5
+* Pillow
+
+Please see [requirements.txt](requirements.txt) for more information.
 
 ## Docker Image
 ToDo

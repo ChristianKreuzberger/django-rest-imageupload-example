@@ -1,11 +1,12 @@
 # Step 1: Set Up the Basic Django Project Structure
 We will start by installing requirements and setting up the project.
 
-## Pre-Requesits
+## Pre-Requesits / Requirements
 Make sure you have the commands `virtualenv` and `python` (version 3.4 or later) installed.
 
-For [Pillow](https://python-pillow.org/) (a third party library for image uploads in Django) to work properly, you need to install some 
-extra tools (mainly libjpeg and zlib). See [this site](http://pillow.readthedocs.io/en/3.1.x/installation.html#building-on-linux) for details.
+For [Pillow](https://python-pillow.org/) (a third party library for image uploads in Django) to work properly, you need 
+to install some extra tools (mainly libjpeg and zlib). See 
+[this site](http://pillow.readthedocs.io/en/3.1.x/installation.html#building-on-linux) for more details.
 
 ## Installing Python Requirements and Setting Up the Virtual Environment
 Create a directory (in this example we will stick to the project name `django-rest-imageupload-example`), 
@@ -14,18 +15,20 @@ install requirements:
 ```bash
 mkdir django-rest-imageupload-example # create directory for our project
 cd django-rest-imageupload-example
-virtualenv -p python3.4 venv # create a virtual Python 3.4 environment
+virtualenv -p python3.4 venv # create a virtual Python 3.4 environment; Python 3.5 should also work
 source venv/bin/activate # activate the venv
 pip install django djangorestframework markdown django-filter pillow # install requirements
 ```
+*Note*: The ``venv`` directory is in my [.gitignore](.gitignore) file. If you choose to name your virtualenv directory
+to something different, make sure to also put it into your [.gitignore](.gitignore)!
 
-Using `pip freeze` you should see the list of installed packages within this virtual environment:
+Using `pip freeze` you should see the list of installed packages within this virtual environment (version numbers may differ):
 ```
-Django==1.10
+Django==1.10.5
 Markdown==2.6.6
 Pillow==3.3.1
 django-filter==0.14.0
-djangorestframework==3.4.6
+djangorestframework==3.5.3
 ```
 
 ## Creating our Django Project
@@ -115,7 +118,7 @@ Quit the server with CONTROL-C.
 As the last line of this message tells you, you can shut down the server by pressing CONTROL and C (or by pressing the stop button in Pycharm).
 
 ## Migrations
-Although we just started the project, it looks like there are 13 un-applied [migrations](https://docs.djangoproject.com/en/1.10/topics/migrations/). 
+Although we just started the project, it looks like there are already 13 un-applied [migrations](https://docs.djangoproject.com/en/1.10/topics/migrations/). 
 Those migrations come directly from Django, and are part of an upgrade-path for various Django versions.
 
 We can quickly fix that by running the following command in a terminal (assuming that you still are in the root folder):

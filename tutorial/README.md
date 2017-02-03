@@ -1,5 +1,5 @@
 # Tutorial
-If you follow this step-by-step tutorial (or the video series - coming soon) you should be able to re-create the app which is provided in this repository.
+If you follow this step-by-step tutorial (or the [video series on YouTube](https://www.youtube.com/watch?v=hMiNTCIY7dw)) you should be able to re-create the app which is provided in this repository.
 
 ## Before you start...
 
@@ -10,7 +10,7 @@ For an optimal tutorial experience I recommend that
  1. you know how to install packages on your system
  1. you are comfortable using [virtual environments](http://docs.python-guide.org/en/latest/dev/virtualenvs/) (you can probably work without them, but it is highly recommended to use them!)
  1. you know how to debug your web application in a Browser (we are using FireFox here, but any other Browser should work too)
- 1. you can do basic programming tasks in JavaScript and Python (at least 3 months experience in both)
+ 1. you can do basic programming tasks in JavaScript and Python (I recommend at least 3 months experience in both)
  
 As a warning: This written tutorial is very superficial. I will however create a YouTube video about it, which I will link within this repository.
 
