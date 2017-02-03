@@ -33,7 +33,7 @@ Two things are wrong with this code:
 1. We should never assign the result of a ``$resource`` query directly to a variable we want to display: ``$scope.images = Images.query();``
 1. We should not have to query the REST API after we delete an image. This causes additional load to the server that can be avoided.
 
-## Deleting the image from the local images list
+## Deleting the image from the local images list using splice
 
-## Using $promise and providing an indicator that images are being loaded
+## Using $promise and providing a "please wait"-message, indicating that images are being loaded
 

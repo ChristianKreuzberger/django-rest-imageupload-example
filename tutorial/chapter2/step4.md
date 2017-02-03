@@ -24,7 +24,7 @@ Rewrite the input form:
             <div class="panel-body">
                 <form class="form" name="form" ng-submit="uploadImage()">
                     <div class="form-group">
-                        <label for="file">Select an Image:</label>
+                        <label for="file">Select an Image</label>
                         <input type="file" ngf-select ng-model="newImage.image" name="file"
                                class="form-control"
                                accept="image/*" ngf-max-size="10MB" required
