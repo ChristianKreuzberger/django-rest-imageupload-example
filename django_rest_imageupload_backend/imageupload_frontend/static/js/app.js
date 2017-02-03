@@ -30,6 +30,9 @@ myApp.controller('MainCtrl', function($scope, Images)
             function(response) {
                 // the response is a valid image, put it at the front of the images array
                 $scope.images.unshift(response);
+
+                // reset newImage
+                $scope.newImage = {};
             },
             function(rejection) {
                 console.log('Failed to upload image');

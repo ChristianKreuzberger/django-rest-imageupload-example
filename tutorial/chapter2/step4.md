@@ -1,23 +1,24 @@
 # Preview the image before uploading
 One of the features that our frontend is missing desperately is a quick preview of the selected image.
 
-## Install 
+## Install  ng-file-upload
+As we do not want to reinvent the wheel, we are using ``ng-file-upload`` to accomplish this task.
 ```bash
 cd imageupload_frontend/static/
 npm install ng-file-upload
 ```
 
+Add the following piece of code into the HTML ``<head>`` tag:
 ```html
     <script src="node_modules/ng-file-upload/dist/ng-file-upload.min.js"></script>
 ```
-
+And include ``ngFileUpload`` as a dependency in your angular module.
 ```javascript
 var myApp = angular.module('imageuploadFrontendApp', ['ngResource', 'ngFileUpload']);
-
 ```
 
-
-Rewrite the input form
+## Make use of ngFileUpload in our frontend
+Rewrite the input form:
 ```html
         <div class="panel panel-default">
             <div class="panel-body">
@@ -38,3 +39,28 @@ Rewrite the input form
             </div>
         </div>
 ```
+
+## Reset newImage after successful upload
+For sanity reasons we should reset ``$scope.newImage`` after a successful upload:
+```javascript
+    $scope.uploadImage = function()
+    {
+        // call REST API endpoint
+        Images.save($scope.newImage).$promise.then(
+            function(response) {
+                // the response is a valid image, put it at the front of the images array
+                $scope.images.unshift(response);
+
+                // reset newImage
+                $scope.newImage = {};
+            },
+            function(rejection) {
+                console.log('Failed to upload image');
+                console.log(rejection);
+            }
+        );
+    };
+```
+
+## remove filesModelDirective
+You probably already noticed that our filesModelDirective is now useless. Therefore we are removing it.
