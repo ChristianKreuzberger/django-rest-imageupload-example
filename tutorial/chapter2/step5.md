@@ -107,3 +107,46 @@ for a very short time.
         );
     };
 ```
+
+### Best Practice: Write a wrapper method for querying the API
+Pro Tip: Wrap your loading method in another function, and store some info that you are loading images with a boolean.
+```javascript
+    /**
+     * An array containing all the images shown on the page
+     * @type {Array}
+     */
+    $scope.images = [];
+    
+    /**
+     * Indicating whether images are being loaded or not
+     * @type {boolean}
+     */
+    $scope.imagesLoading = false;
+    
+    /**
+     * Load images from API
+     * @returns {*}
+     */
+    $scope.loadImages = function() {
+        $scope.imagesLoading = true;
+        
+        return Images.query().$promise.then(
+            // on success
+            function success(response) {
+                // store response
+                $scope.images = response;
+                // loading has finished
+                $scope.imagesLoading = false;
+                return response;
+            },
+            // on error
+            function error(rejection) {
+                // log the error to console
+                console.log(rejection);
+                // loading has finished (although with an error)
+                $scope.imagesLoading = false;
+                return rejection;
+            }
+        );
+    };
+```
