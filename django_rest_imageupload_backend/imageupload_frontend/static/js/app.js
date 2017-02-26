@@ -53,8 +53,21 @@ myApp.controller('MainCtrl', function($scope, Images)
             {
                 // success delete
                 console.log('Deleted it');
+
                 // update $scope.images
-                $scope.images = Images.query();
+                var idx = $scope.images.indexOf(image);
+                if (idx < 0) {
+                    console.log('Error: Could not find image');
+                } else {
+                    $scope.images.splice(idx, 1);
+                }
+
+                // alternatively, update $scope.images from REST API
+                // Images.query().$promise.then(
+                //     function success(response) {
+                //         $scope.images = response;
+                //     }
+                // );
             },
             function(rejection)
             {

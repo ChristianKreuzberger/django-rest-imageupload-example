@@ -31,7 +31,7 @@
                                ngf-model-invalid="errorFile">
                         <i ng-show="form.file.$error.maxSize">File too large
                             {{ errorFile.size / 1000000 | number:1 }} MB: max 10M</i>
-                        <img ng-show="form.file.$valid" ngf-thumbnail="newImage.image" class="img-responsive">
+                        <img ng-show="form.file.$valid" ngf-thumbnail="newImage.image" class="img-responsive" style="max-width: 50%">
                         <button class="btn btn-warning" ng-click="newImage.image = null" ng-show="newImage.image">Remove</button>
                     </div>
                     <div class="form-group">
