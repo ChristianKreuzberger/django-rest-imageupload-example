@@ -1,5 +1,11 @@
 "use strict";
-var myApp = angular.module('imageuploadFrontendApp', ['ngResource', 'ngFileUpload']);
+
+var myApp = angular.module('imageuploadFrontendApp', [
+    'ngResource',
+    'ngFileUpload',
+    'ngAnimate',
+    'toaster'
+]);
 
 /**
  * Configure our angular app
@@ -12,7 +18,7 @@ myApp.config(function($resourceProvider) {
  * Main Controller of our App
  * Handles the image upload within the frontend
  */
-myApp.controller('MainCtrl', function($scope, Images)
+myApp.controller('MainCtrl', function($scope, Images, toaster)
 {
     console.log('In main Control');
 
@@ -44,6 +50,7 @@ myApp.controller('MainCtrl', function($scope, Images)
                 $scope.images = response;
                 // loading has finished
                 $scope.imagesLoading = false;
+
                 return response;
             },
             // on error
@@ -70,10 +77,13 @@ myApp.controller('MainCtrl', function($scope, Images)
 
                 // reset newImage
                 $scope.newImage = {};
+
+                toaster.pop('success', "Image uploaded!");
             },
             function(rejection) {
                 console.log('Failed to upload image');
                 console.log(rejection);
+                toaster.pop('error', "Failed to upload image");
             }
         );
     };
@@ -99,6 +109,8 @@ myApp.controller('MainCtrl', function($scope, Images)
                     $scope.images.splice(idx, 1);
                 }
 
+                toaster.pop('success', "Image deleted");
+
                 // alternatively, update $scope.images from REST API
                 // $scope.loadImages();
             },
@@ -107,6 +119,7 @@ myApp.controller('MainCtrl', function($scope, Images)
                 // failed to delete it
                 console.log('Failed to delete image');
                 console.log(rejection);
+                toaster.pop('error', "Failed to delete image");
             }
         );
     };
