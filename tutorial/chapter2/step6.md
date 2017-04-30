@@ -19,7 +19,7 @@ We have to add the following includes:
     <link rel="stylesheet" href="node_modules/angularjs-toaster/toaster.min.css">
 ```
 
-and add ```'toaster'`` aswell as ``'ngAnimate'`` to our app dependencies in ``app.js``:
+and add ``'toaster'`` aswell as ``'ngAnimate'`` to our app dependencies in ``app.js``:
 ```javascript
 var myApp = angular.module('imageuploadFrontendApp', [
     'ngResource', 
