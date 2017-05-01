@@ -86,15 +86,15 @@ labels input fields, and applying ``class="form-control"`` to the input fields:
             <form class="form" name="form" ng-submit="uploadImage()">
                 <div class="form-group">
                     <label for="inputFile">Select Image:</label>
-                    <input id="inputFile" type="file" files-model="newImage.image">
+                    <input id="inputFile" class="form-control" type="file" files-model="newImage.image">
                 </div>
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input type="text" id="title" ng-model="newImage.title">
+                    <input type="text" class="form-control" id="title" ng-model="newImage.title">
                 </div>
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <textarea id="description" ng-model="newImage.description"></textarea>
+                    <textarea id="description" class="form-control" ng-model="newImage.description"></textarea>
                 </div>
                 <button class="btn btn-primary" type="submit">
                     Upload
