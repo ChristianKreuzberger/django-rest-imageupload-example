@@ -44,17 +44,17 @@ Displaying the title and description is easy. Open `imageupload_frontend/static/
 the part where the image is displayed as follows:
 ```HTML
 <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" ng-repeat="image in images track by image.pk">
-            <h3>
-                {{ image.title }}
-                <button class="btn btn-warning" ng-click="deleteImage(image)">Delete</button>
-            </h3>
-            <a href="{{ image.image }}">
-                <img class="img-responsive" ng-src="{{ image.thumbnail }}">
-                <p>{{ image.description }}</p>
-            </a>
-        </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" ng-repeat="image in images track by image.pk">
+        <h3>
+            {{ image.title }}
+            <button class="btn btn-warning" ng-click="deleteImage(image)">Delete</button>
+        </h3>
+        <a href="{{ image.image }}">
+            <img class="img-responsive" ng-src="{{ image.thumbnail }}">
+            <p>{{ image.description }}</p>
+        </a>
     </div>
+</div>
 ```
 
 Last but not least, we have to add two input fields to the `Upload` form in `imageupload_frontend/static/index.html`:

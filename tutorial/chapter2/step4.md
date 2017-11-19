@@ -20,24 +20,24 @@ var myApp = angular.module('imageuploadFrontendApp', ['ngResource', 'ngFileUploa
 ## Make use of ngFileUpload in our frontend
 Rewrite the input form:
 ```html
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <form class="form" name="form" ng-submit="uploadImage()">
-                    <div class="form-group">
-                        <label for="file">Select an Image</label>
-                        <input type="file" ngf-select ng-model="newImage.image" name="file"
-                               class="form-control"
-                               accept="image/*" ngf-max-size="10MB" required
-                               ngf-model-invalid="errorFile">
-                        <i ng-show="form.file.$error.maxSize">File too large
-                            {{ errorFile.size / 1000000 | number:1 }} MB: max 10M</i>
-                        <img ng-show="form.file.$valid" ngf-thumbnail="newImage.image" class="img-responsive" style="max-width: 50%">
-                        <button class="btn btn-warning" ng-click="newImage.image = null" ng-show="newImage.image">Remove</button>
-                    </div>
-                    ...
-                </form>
-            </div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <form class="form" name="form" ng-submit="uploadImage()">
+                <div class="form-group">
+                    <label for="file">Select an Image</label>
+                    <input type="file" ngf-select ng-model="newImage.image" name="file"
+                           class="form-control"
+                           accept="image/*" ngf-max-size="10MB" required
+                           ngf-model-invalid="errorFile">
+                    <i ng-show="form.file.$error.maxSize">File too large
+                        {{ errorFile.size / 1000000 | number:1 }} MB: max 10M</i>
+                    <img ng-show="form.file.$valid" ngf-thumbnail="newImage.image" class="img-responsive" style="max-width: 50%">
+                    <button class="btn btn-warning" ng-click="newImage.image = null" ng-show="newImage.image">Remove</button>
+                </div>
+                ...
+            </form>
         </div>
+    </div>
 ```
 
 ## Reset newImage after successful upload
