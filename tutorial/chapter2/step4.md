@@ -31,7 +31,7 @@ Rewrite the input form:
                            ngf-model-invalid="errorFile">
                     <i ng-show="form.file.$error.maxSize">File too large
                         {{ errorFile.size / 1000000 | number:1 }} MB: max 10M</i>
-                    <img ng-show="form.file.$valid" ngf-thumbnail="newImage.image" class="img-responsive" style="max-width: 50%">
+                    <img ng-if="form.file.$valid" ngf-thumbnail="newImage.image" class="img-responsive" style="max-width: 50%">
                     <button class="btn btn-warning" ng-click="newImage.image = null" ng-show="newImage.image">Remove</button>
                 </div>
                 ...
@@ -64,3 +64,9 @@ For sanity reasons we should reset ``$scope.newImage`` after a successful upload
 
 ## remove filesModelDirective
 You probably already noticed that our filesModelDirective is now useless. Therefore we are removing it.
+
+Remove the following line from your index.html:
+```html
+<script src="js/filesModelDirective.js"></script>
+```
+And remove the filesModelDirective.js file from your project.
